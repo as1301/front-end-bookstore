@@ -1,0 +1,36 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Bookshop</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a routerLink= "/homepage">HOMEPAGE</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink="/"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<p style="margin-top: 123px ; text-align: center ; font-size: 20px;">
+  <b>WISHLIST</b>
+</p>
+<table border="1" style="width: 100%">
+  <tr style="height: 30px;">
+      <th>name</th>
+      <th>seller</th>
+      <th>author</th>
+      <th>conditon</th>
+      <th>price</th>
+  </tr>
+  <tr *ngFor="let wish of wishlist">
+    <td>{{wish.name}}</td>
+    <td>{{wish.seller}}</td>
+    <td>{{wish.author}}</td>
+    <td>{{wish.condition}}</td>
+    <td>{{wish.price}}</td>
+    
+  </tr>
+  
+</table>
+

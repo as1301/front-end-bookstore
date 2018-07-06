@@ -1,0 +1,58 @@
+<body>
+  <div class="container" style="margin-top: 50px;margin-bottom: 50px;">
+    <form class="form-horizontal" role="form" name="myform" [formGroup]="myform" (ngSubmit)="onSubmit()">
+        <h2>Registration</h2>
+        <div class="form-group">
+            <label for="firstName" class="col-sm-3 control-label">First Name*</label>
+            <div class="col-sm-9">    
+                <input type="text" id="firstName" placeholder="First Name" class="form-control" formControlName="firstName" pattern="[a-zA-z]+" autofocus required >
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastName" class="col-sm-3 control-label">Last Name</label>
+            <div class="col-sm-9">
+                <input type="text" id="lastName" placeholder="Last Name" class="form-control" formControlName="lastName" pattern="[a-zA-z]+" autofocus required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-3 control-label">Email* </label>
+            <div class="col-sm-9">
+                <input type="email" id="email" placeholder="Email" class="form-control" formControlName="email" pattern="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" name= "email" required>
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="password" class="col-sm-3 control-label">Password*</label>
+          <div class="col-sm-9">
+              <input type="password" id="password" placeholder="Password" class="form-control"formControlName="password" autofocus required>
+          </div>
+      </div> 
+        <div class="form-group">
+          <label for="college" class="col-sm-3 control-label">College</label>
+          <div class="col-sm-9">
+              <input type="text" id="college" placeholder="College" class="form-control" formControlName="college" pattern="^[a-zA-Z\s]+$" autofocus required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="phoneNumber" class="col-sm-3 control-label">Phone number </label>
+            <div class="col-sm-9">
+                <input type="phoneNumber" id="phoneNumber" placeholder="Phone number" class="form-control" pattern="[0-9]{10}" formControlName="phone"required>
+                <span class="help-block">Your phone number won't be disclosed to anyone </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="address" class="col-sm-3 control-label">Address</label>
+            <div class="col-sm-9">
+                <textarea class="form-control" rows="5" id="comment" formControlName="address" required></textarea>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+                <span class="help-block">*Required fields</span>
+            </div>
+        </div>
+        <button type="submit" [disabled]="myform.invalid" class="btn btn-primary btn-block">Register</button>
+    </form> <!-- /form -->
+  </div> <!-- ./container -->
+  </body>
